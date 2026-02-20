@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatNow – Real-Time Communication</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- ── Login Screen ─────────────────────────────────────── -->
+  <div id="login-screen" class="screen active">
+    <div class="login-card">
+      <h1>💬 ChatNow</h1>
+      <p class="subtitle">Real-Time Messaging Platform</p>
+      <input id="username-input" type="text" maxlength="30"
+             placeholder="Your name…" autocomplete="off" />
+      <input id="room-input" type="text" maxlength="30"
+             placeholder="Room name (e.g. General)…" autocomplete="off" />
+      <button id="join-btn">Join Room</button>
+    </div>
+  </div>
+
+  <!-- ── Chat Screen ───────────────────────────────────────── -->
+  <div id="chat-screen" class="screen">
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <span id="room-label">Room</span>
+      </div>
+      <ul id="users-list"></ul>
+    </aside>
+
+    <main id="chat-main">
+      <header id="chat-header">
+        <button id="leave-btn" title="Leave room">&#8592; Leave</button>
+        <span id="chat-room-title">Room</span>
+      </header>
+
+      <section id="messages"></section>
+
+      <div id="typing-indicator"></div>
+
+      <footer id="chat-footer">
+        <label id="media-label" title="Share media">
+          📎
+          <input id="media-input" type="file"
+                 accept="image/*,video/mp4,video/webm,audio/mpeg,audio/ogg,application/pdf" />
+        </label>
+        <input id="message-input" type="text" maxlength="2000"
+               placeholder="Type a message…" autocomplete="off" />
+        <button id="send-btn">Send</button>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
